@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+   <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
+    <Title>ReflectionLib</Title>
+    <Authors>G.Raf</Authors>
+    <Company>G.Raf^engineering</Company>
+    <Copyright>(c) 2020 G.Raf</Copyright>
+    <PackageProjectUrl>https://github.com/sunriax/reflection</PackageProjectUrl>
+    <PackageTags>reflector, loader, dynamic, dll, class, runtime, ragae, sunriax, 0x007E</PackageTags>
+    <Version>1.0.0</Version>
+    <Description>Tool to load classes (objects) at runtime.</Description>
+    <PackageId>RaGae.Reflection</PackageId>
+    <RepositoryUrl>https://github.com/sunriax/reflection.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes></PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.6" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="3.1.6" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.6" />
+    <PackageReference Include="RaGae.Exception" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="ReflectionResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ReflectionResource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="ReflectionResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReflectionResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <ItemGroup>
+      <ReflectorConfig Include="$(SolutionDir)\ReflectionLib\*.json" />
+    </ItemGroup>
+
+    <Copy SourceFiles="@(ReflectorConfig)" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  
+</Project>

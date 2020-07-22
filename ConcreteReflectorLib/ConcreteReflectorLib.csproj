@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AbstractReflectorLib\AbstractReflectorLib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <CompiledFiles Include="$(TargetPath)"/>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Copy SourceFiles="@(CompiledFiles)" DestinationFolder="$(SolutionDir)MakeReflection\Reflection" SkipUnchangedFiles="true" />
+  </Target>
+  
+</Project>

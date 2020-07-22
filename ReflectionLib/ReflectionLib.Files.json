@@ -1,0 +1,14 @@
+{
+  "ReflectionLibConfig": [
+    {
+      "Files": [
+        "Reflection/ConcreteReflectorLib.dll"
+      ]
+    },
+    {
+      "Files": [
+        "IReflection/ConcreteIReflectorLib.dll"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "ReflectionLibConfig": [
+    {
+      "ReflectionPath": "TestReflection",
+      "FileSpecifier": "*ReflectorLib.dll",
+      "Files": [
+        "TestReflection/TestReflectorLib.dll"
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "ReflectionLibConfig": [
+  "ReflectionConfig": [
     {
       "ReflectionPath": "TestReflection",
       "FileSpecifier": "*ReflectorLib.dll",

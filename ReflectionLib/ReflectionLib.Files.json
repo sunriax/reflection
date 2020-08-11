@@ -1,5 +1,5 @@
 {
-  "ReflectionLibConfig": [
+  "ReflectionConfig": [
     {
       "Files": [
         "Reflection/ConcreteReflectorLib.dll"

@@ -1,5 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
-using ReflectionLib;
+﻿using RaGae.BootstrapLib.Loader;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -48,13 +48,7 @@ namespace RaGae.ReflectionLib
         {
             try
             {
-                IConfigurationRoot configuration = new ConfigurationBuilder()
-                    .SetBasePath(Directory.GetCurrentDirectory())
-                    .AddJsonFile(configFile, optional: false, reloadOnChange: true)
-                    .Build();
-
-                this.config = new ReflectionConfig();
-                configuration.GetSection($"{ReflectionResource.Config}:{section}").Bind(this.config);
+                this.config = Loader.LoadConfigSection<ReflectionConfig>(configFile, $"{nameof(ReflectionConfig)}:{section}");
             }
             catch
             {

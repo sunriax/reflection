@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ReflectionLib {
+namespace RaGae.ReflectionLib {
     using System;
     
     

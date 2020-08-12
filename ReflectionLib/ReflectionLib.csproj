@@ -24,22 +24,6 @@
     <PackageReference Include="RaGae.Bootstrap" Version="0.0.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="ReflectionResource.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ReflectionResource.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="ReflectionResource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ReflectionResource.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>RaGae.ReflectionLib</CustomToolNamespace>
-    </EmbeddedResource>
-  </ItemGroup>
-
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <ItemGroup>
       <ReflectorConfig Include="$(SolutionDir)\ReflectionLib\*.json" />

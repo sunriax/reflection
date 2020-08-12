@@ -33,7 +33,7 @@ Reflection r = new Reflection("Path to config", "section number");
 
 ``` json
 {
-  "ReflectionLibConfig": [
+  "ReflectionConfig": [
     {
       "ReflectionPath": "Reflection",
       "FileSpecifier": "*ReflectorLib.dll",
@@ -90,7 +90,7 @@ Reflection r = new Reflection("...", 0);
 
 ``` json
 {
-  "ReflectionLibConfig": [
+  "ReflectionConfig": [
     {
       "Files": [
         "Reflection/ConcreteReflectorLib.dll"
@@ -109,7 +109,7 @@ Reflection r = new Reflection("...", 0);
 
 ``` json
 {
-  "ReflectionLibConfig": [
+  "ReflectionConfig": [
     {
       "ReflectionPath": "Reflection",
       "FileSpecifier": "*ReflectorLib.dll"
@@ -314,3 +314,5 @@ static void Main(string[] args)
 ```
 
 ---
+
+R. GAECHTER

@@ -30,8 +30,8 @@ script:
 before_deploy:
   - set -e
   - dotnet build -c Release -o ./output
-  - zip ./Reflection.zip ./output/RaGae.ReflectionLib.dll ./output/RaGae.ReflectionLib.pdb ./output/RaGae.ReflectionLib.deps.json ./output/RaGae.ReflectionLib.json
-  - tar cfvz ./Reflection.tar.gz ./output/RaGae.ReflectionLib.dll ./output/RaGae.ReflectionLib.pdb ./output/RaGae.ReflectionLib.deps.json ./output/RaGae.ReflectionLib.json
+  - zip ./Reflection.zip ./output/RaGae.ReflectionLib.dll ./output/RaGae.ReflectionLib.pdb ./output/RaGae.ReflectionLib.deps.json ./output/ReflectionLib.json
+  - tar cfvz ./Reflection.tar.gz ./output/RaGae.ReflectionLib.dll ./output/RaGae.ReflectionLib.pdb ./output/RaGae.ReflectionLib.deps.json ./output/ReflectionLib.json
 
 deploy:
   provider: releases
@@ -41,7 +41,7 @@ deploy:
     - "./Reflection.zip"
     - "./Reflection.tar.gz"
     - "./output/RaGae.ReflectionLib.dll"
-    - "./output/RaGae.ReflectionLib.json"
+    - "./output/ReflectionLib.json"
   skip_cleanup: true
   on:
     tags: true

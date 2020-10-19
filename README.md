@@ -31,7 +31,7 @@ Reflection r = new Reflection("Path to config", "section number");
 
 **`ReflectionLib.json`**
 
-``` json
+``` yaml
 {
   "ReflectionConfig": [
     {
@@ -88,7 +88,7 @@ Reflection r = new Reflection("...", 0);
 
 **`ReflectionLib.Files.json`**
 
-``` json
+``` yaml
 {
   "ReflectionConfig": [
     {
@@ -107,7 +107,7 @@ Reflection r = new Reflection("...", 0);
 
 **`ReflectionLib.Path.json`**
 
-``` json
+``` yaml
 {
   "ReflectionConfig": [
     {

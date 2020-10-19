@@ -30,8 +30,8 @@ script:
 before_deploy:
   - set -e
   - dotnet build -c Release -o ./output
-  - zip ./Reflection.zip ./output/RaGae.ReflectionLib.dll ./output/RaGae.ReflectionLib.pdb ./output/RaGae.ReflectionLib.deps.json ./output/ReflectionLib.json
-  - tar cfvz ./Reflection.tar.gz ./output/RaGae.ReflectionLib.dll ./output/RaGae.ReflectionLib.pdb ./output/RaGae.ReflectionLib.deps.json ./output/ReflectionLib.json
+  - zip ./Reflection.zip ./output
+  - tar cfvz ./Reflection.tar.gz ./output
 
 deploy:
   provider: releases
@@ -47,4 +47,4 @@ deploy:
     tags: true
 
 after_deploy:
-  - dotnet nuget push ./output/RaGae.Reflection.*.nupkg -k $NUGET_TOKEN -s https://api.nuget.org/v3/index.json
+  - dotnet nuget push ./output/'*.nupkg' -k $NUGET_TOKEN -s https://api.nuget.org/v3/index.json

@@ -1,6 +1,8 @@
 # Travis CI build pipeline
 # --------------------------------------------
 
+os: linux
+dist: xenial
 language: csharp
 solution: ExceptionLib.sln
 mono: none
@@ -30,7 +32,7 @@ script:
 before_deploy:
   - set -e
   - dotnet build -c Release -o ./output
-  - zip ./Reflection.zip ./output
+  - zip ./Reflection.zip ./output/*
   - tar cfvz ./Reflection.tar.gz ./output
 
 deploy:
@@ -47,4 +49,4 @@ deploy:
     tags: true
 
 after_deploy:
-  - dotnet nuget push ./output/'*.nupkg' -k $NUGET_TOKEN -s https://api.nuget.org/v3/index.json
+  - dotnet nuget push --skip-duplicate ./output/'*.nupkg' -k $NUGET_TOKEN -s https://api.nuget.org/v3/index.json

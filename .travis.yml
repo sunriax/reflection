@@ -4,7 +4,7 @@
 os: linux
 dist: xenial
 language: csharp
-solution: ExceptionLib.sln
+solution: ReflectionLib.sln
 mono: none
 dotnet: 3.1.301
 
@@ -31,9 +31,11 @@ script:
 
 before_deploy:
   - set -e
-  - dotnet build -c Release -o ./output
-  - zip ./Reflection.zip ./output/*
-  - tar cfvz ./Reflection.tar.gz ./output
+  #- dotnet build -c Release -o ./output
+  - dotnet publish ReflectionLib.sln -c Release -o output
+  - dotnet pack ReflectionLib.sln -c Release -o nuget
+  - zip ./Reflection.zip ./output/* ./nuget/*
+  - tar cfvz ./Reflection.tar.gz ./output ./nuget
 
 deploy:
   provider: releases
@@ -42,11 +44,9 @@ deploy:
   file:
     - "./Reflection.zip"
     - "./Reflection.tar.gz"
-    - "./output/RaGae.ReflectionLib.dll"
-    - "./output/ReflectionLib.json"
   skip_cleanup: true
   on:
     tags: true
 
 after_deploy:
-  - dotnet nuget push --skip-duplicate ./output/'*.nupkg' -k $NUGET_TOKEN -s https://api.nuget.org/v3/index.json
+  - dotnet nuget push --skip-duplicate ./nuget/'*.nupkg' -k $NUGET_TOKEN -s https://api.nuget.org/v3/index.json

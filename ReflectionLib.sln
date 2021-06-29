@@ -17,7 +17,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReflectionLibTest", "Reflec
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MakeReflection", "MakeReflection\MakeReflection.csproj", "{7458D8AC-B9B0-421D-BB89-D76ABC356BD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestReflectorLib", "TestReflectorLib\TestReflectorLib.csproj", "{41339022-6634-4EDA-A80D-0FBA89038E4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestReflectorLib", "TestReflectorLib\TestReflectorLib.csproj", "{41339022-6634-4EDA-A80D-0FBA89038E4E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1F5C6F23-8F4A-42E0-BEB3-39A56A65DDDB}"
+	ProjectSection(SolutionItems) = preProject
+		GRAF.png = GRAF.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

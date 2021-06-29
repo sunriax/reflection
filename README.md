@@ -1,4 +1,4 @@
-[![Version: 1.0 Release](https://img.shields.io/badge/Version-1.0%20Release-green.svg)](https://github.com/sunriax) [![Build Status](https://www.travis-ci.org/sunriax/reflection.svg?branch=master)](https://www.travis-ci.org/sunriax/reflection) [![codecov](https://codecov.io/gh/sunriax/reflection/branch/master/graph/badge.svg)](https://codecov.io/gh/sunriax/reflection) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Version: 1.0 Release](https://img.shields.io/badge/Version-1.0%20Release-green.svg)](https://github.com/sunriax) [![NuGet](https://img.shields.io/nuget/dt/ragae.reflection.svg)](https://www.nuget.org/packages/ragae.reflection) [![Build Status](https://www.travis-ci.com/sunriax/reflection.svg?branch=main)](https://www.travis-ci.com/sunriax/reflection) [![codecov](https://codecov.io/gh/sunriax/reflection/branch/main/graph/badge.svg)](https://codecov.io/gh/sunriax/reflection) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 # ReflectionLib
 
@@ -315,4 +315,4 @@ static void Main(string[] args)
 
 ---
 
-R. GAECHTER
+R. GÄCHTER

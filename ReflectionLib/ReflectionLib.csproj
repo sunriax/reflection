@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
  
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>net5.0;netstandard2.0;netstandard2.1;net472</TargetFrameworks>
     <RootNamespace>RaGae</RootNamespace>
     <AssemblyName>RaGae.$(MSBuildProjectName)</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -15,17 +15,26 @@
     <Copyright>(c) 2020 G.Raf</Copyright>
     <PackageProjectUrl>https://github.com/sunriax/reflection</PackageProjectUrl>
     <PackageTags>reflector, loader, dynamic, dll, class, runtime, ragae, sunriax, 0x007E</PackageTags>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
     <Description>Tool to load classes (objects) at runtime.</Description>
     <PackageId>RaGae.Reflection</PackageId>
     <RepositoryUrl>https://github.com/sunriax/reflection.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageIcon>GRAF.png</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
+  
+  <ItemGroup>
+    <None Include="..\GRAF.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="RaGae.Exception" Version="1.0.3" />
-    <PackageReference Include="RaGae.Bootstrap" Version="0.1.0" />
+    <PackageReference Include="RaGae.Exception" Version="1.0.5" />
+    <PackageReference Include="RaGae.Bootstrap" Version="1.0.0" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

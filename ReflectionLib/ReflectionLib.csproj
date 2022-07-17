@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+ 
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;netstandard2.0;netstandard2.1;net472</TargetFrameworks>
+    <RootNamespace>RaGae</RootNamespace>
+    <AssemblyName>RaGae.$(MSBuildProjectName)</AssemblyName>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
+    <Title>$(MSBuildProjectName)</Title>
+    <Authors>G.Raf</Authors>
+    <Company>G.Raf^engineering</Company>
+    <Copyright>(c) 2020 G.Raf</Copyright>
+    <PackageProjectUrl>https://github.com/sunriax/reflection</PackageProjectUrl>
+    <PackageTags>reflector, loader, dynamic, dll, class, runtime, ragae, sunriax, 0x007E</PackageTags>
+    <Version>1.0.6</Version>
+    <Description>Tool to load classes (objects) at runtime.</Description>
+    <PackageId>RaGae.Reflection</PackageId>
+    <RepositoryUrl>https://github.com/sunriax/reflection.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageIcon>GRAF.png</PackageIcon>
+    <PackageIconUrl />
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <None Include="..\GRAF.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RaGae.Exception" Version="1.0.6" />
+    <PackageReference Include="RaGae.Bootstrap" Version="1.0.1" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <ItemGroup>
+      <ReflectorConfig Include="$(SolutionDir)\ReflectionLib\*.json" />
+    </ItemGroup>
+
+    <Copy SourceFiles="@(ReflectorConfig)" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  
+</Project>

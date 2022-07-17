@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+    <IsPublishable>false</IsPublishable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AbstractReflectorLib\AbstractReflectorLib.csproj" />
+    <ProjectReference Include="..\IReflectorLib\IReflectorLib.csproj" />
+    <ProjectReference Include="..\ReflectionLib\ReflectionLib.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <ItemGroup>
+      <ReflectorConfig Include="$(SolutionDir)\ReflectionLib\*.json" />
+    </ItemGroup>
+
+    <Copy SourceFiles="@(ReflectorConfig)" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+    <ItemGroup>
+      <Reflector Include="$(ProjectDir)\Reflection\*.dll" />
+    </ItemGroup>
+
+    <Copy SourceFiles="@(Reflector)" DestinationFolder="$(TargetDir)\Reflection" SkipUnchangedFiles="true" />
+
+    <ItemGroup>
+      <IReflector Include="$(ProjectDir)\IReflection\*.dll" />
+    </ItemGroup>
+
+    <Copy SourceFiles="@(IReflector)" DestinationFolder="$(TargetDir)\IReflection" SkipUnchangedFiles="true" />
+  </Target>
+
+</Project>

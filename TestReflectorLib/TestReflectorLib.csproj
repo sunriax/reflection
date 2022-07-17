@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+    <IsPublishable>false</IsPublishable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <CompiledFiles Include="$(TargetPath)" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Copy SourceFiles="@(CompiledFiles)" DestinationFolder="$(SolutionDir)ReflectionLibTest\TestReflection" SkipUnchangedFiles="true" />
+  </Target>
+  
+</Project>

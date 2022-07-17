@@ -1,0 +1,12 @@
+{
+  "ReflectionConfig": [
+    {
+      "ReflectionPath": "Reflection",
+      "FileSpecifier": "*ReflectorLib.dll"
+    },
+    {
+      "ReflectionPath": "IReflection",
+      "FileSpecifier": "*IReflectorLib.dll"
+    }
+  ]
+}
